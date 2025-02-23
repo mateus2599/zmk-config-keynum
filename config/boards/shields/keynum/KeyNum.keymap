@@ -9,11 +9,11 @@
         default_layer {
             display-name = "Base"; // Corrigido de display-name para label
             bindings = <
-                &kp KP_NUMLOCK  &kp KP_SLASH   &kp KP_ASTERISK  &kp KP_MINUS
+                &kp KP_N7       &kp KP_N7      &kp KP_N7        &kp KP_N7
                 &kp KP_N7       &kp KP_N8      &kp KP_N9        &kp KP_N0
                 &kp KP_N4       &kp KP_N5      &kp KP_N6        &none
-                &kp KP_N1       &kp KP_N2      &kp KP_N3        &kp KP_ENTER
-                &kp KP_PLUS     &kp KP_DOT     &kp KP_DELETE    &none 
+                &kp KP_N1       &kp KP_N2      &kp KP_N3        &kp KP_N7
+                &kp KP_N7       &kp KP_N7      &kp KP_N7        &none 
             >;
         };
     };
