@@ -1,24 +1,25 @@
+#include <dt-bindings/zmk/matrix_transform.h>
+
 / {
     chosen {
-        zmk,keyboard = &keynum;
+        zmk,kscan = &default_kscan;
+        zmk,matrix_transform = &default_transform;
     };
 
-    &gpio0 {
-        row_gpios: row-gpios {
-            compatible = "gpio-keys";
-            row0: row0 { gpios = <&gpio0 115 GPIO_ACTIVE_LOW>; }; // num, /, *, -
-            row1: row1 { gpios = <&gpio0 113 GPIO_ACTIVE_LOW>; }; // 7, 8, 9, 0
-            row2: row2 { gpios = <&gpio0 111 GPIO_ACTIVE_LOW>; }; // 4, 5, 6
-            row3: row3 { gpios = <&gpio0 10 GPIO_ACTIVE_LOW>; };  // 1, 2, 3, Enter
-            row4: row4 { gpios = <&gpio0 9 GPIO_ACTIVE_LOW>; };   // +, ., Del
-        };
+    default_kscan: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "default_kscan";
+        diode-direction = "col2row";
 
-        col_gpios: col-gpios {
-            compatible = "gpio-keys";
-            col0: col0 { gpios = <&gpio0 100 GPIO_ACTIVE_LOW>; }; // Coluna 1
-            col1: col1 { gpios = <&gpio0 11 GPIO_ACTIVE_LOW>; };  // Coluna 2
-            col2: col2 { gpios = <&gpio0 104 GPIO_ACTIVE_LOW>; }; // Coluna 3
-            col3: col3 { gpios = <&gpio0 106 GPIO_ACTIVE_LOW>; }; // Coluna 4
-        };
+        row_gpios = <&gpio0 115 GPIO_ACTIVE_LOW>, // num, /, *, -
+                     <&gpio0 113 GPIO_ACTIVE_LOW>, // 7, 8, 9, 0
+                     <&gpio0 111 GPIO_ACTIVE_LOW>, // 4, 5, 6
+                     <&gpio0 10 GPIO_ACTIVE_LOW>,  // 1, 2, 3, Enter
+                     <&gpio0 9 GPIO_ACTIVE_LOW>;   // +, ., Del 
+
+        col_gpios: <&gpio0 100 GPIO_ACTIVE_LOW>, // Coluna 1
+                    <&gpio0 11 GPIO_ACTIVE_LOW>,  // Coluna 2
+                    <&gpio0 104 GPIO_ACTIVE_LOW>, // Coluna 3
+                    <&gpio0 106 GPIO_ACTIVE_LOW>; // Coluna 4 
     };
-};
+}; 
