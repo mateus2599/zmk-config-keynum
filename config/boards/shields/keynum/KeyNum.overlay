@@ -11,15 +11,15 @@
         label = "default_kscan";
         diode-direction = "col2row";
 
-        row_gpios = <&gpio0 115 GPIO_ACTIVE_LOW>, // num, /, *, -
-                     <&gpio0 113 GPIO_ACTIVE_LOW>, // 7, 8, 9, 0
-                     <&gpio0 111 GPIO_ACTIVE_LOW>, // 4, 5, 6
-                     <&gpio0 10 GPIO_ACTIVE_LOW>,  // 1, 2, 3, Enter
-                     <&gpio0 9 GPIO_ACTIVE_LOW>;   // +, ., Del 
+        row-gpios = <&gpio0 115 GPIO_ACTIVE_LOW>,  // num, /, *, -
+                    <&gpio0 113 GPIO_ACTIVE_LOW>,  // 7, 8, 9, 0
+                    <&gpio0 111 GPIO_ACTIVE_LOW>,  // 4, 5, 6
+                    <&gpio0 10 GPIO_ACTIVE_LOW>,   // 1, 2, 3, Enter
+                    <&gpio0 9 GPIO_ACTIVE_LOW>;    // +, ., Del 
 
-        col_gpios: <&gpio0 100 GPIO_ACTIVE_LOW>, // Coluna 1
+        col-gpios = <&gpio0 100 GPIO_ACTIVE_LOW>, // Coluna 1
                     <&gpio0 11 GPIO_ACTIVE_LOW>,  // Coluna 2
                     <&gpio0 104 GPIO_ACTIVE_LOW>, // Coluna 3
                     <&gpio0 106 GPIO_ACTIVE_LOW>; // Coluna 4 
     };
-}; 
+};
