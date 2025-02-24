@@ -16,7 +16,7 @@
                     <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >,   // 1, 2, 3, Enter
                     <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >;    // +, ., Del 
 
-        col-gpios = <&gpio1  0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >, // Coluna 1
+        col-gpios = <&gpio1 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >, // Coluna 1
                     <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >,  // Coluna 2
                     <&gpio1 04 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >, // Coluna 3
                     <&gpio1 06 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >; // Coluna 4 
