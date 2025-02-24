@@ -10,16 +10,16 @@
         compatible = "zmk,kscan-gpio-matrix"; 
         diode-direction = "col2row";
 
-        row-gpios = <&gpio0 115 GPIO_ACTIVE_LOW>,  // num, /, *, -
-                    <&gpio0 113 GPIO_ACTIVE_LOW>,  // 7, 8, 9, 0
-                    <&gpio0 111 GPIO_ACTIVE_LOW>,  // 4, 5, 6
-                    <&gpio0 10 GPIO_ACTIVE_LOW>,   // 1, 2, 3, Enter
-                    <&gpio0 9 GPIO_ACTIVE_LOW>;    // +, ., Del 
+        row-gpios = <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >,  // num, /, *, -
+                    <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >,  // 7, 8, 9, 0
+                    <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >,  // 4, 5, 6
+                    <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >,   // 1, 2, 3, Enter
+                    <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >;    // +, ., Del 
 
-        col-gpios = <&gpio0 100 GPIO_ACTIVE_LOW>, // Coluna 1
-                    <&gpio0 11 GPIO_ACTIVE_LOW>,  // Coluna 2
-                    <&gpio0 104 GPIO_ACTIVE_LOW>, // Coluna 3
-                    <&gpio0 106 GPIO_ACTIVE_LOW>; // Coluna 4 
+        col-gpios = <&gpio1  0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >, // Coluna 1
+                    <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >,  // Coluna 2
+                    <&gpio1 04 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >, // Coluna 3
+                    <&gpio1 06 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) >; // Coluna 4 
     };
     
     default_transform: matrix_transform {
@@ -27,9 +27,9 @@
         columns = <4>;
         rows = <5>; 
         matrix = <
-            0 1 2 3  // Primeira linha
-            4 5 6 7
-            8 9 10 11
+            0  1  2  3   // Primeira linha
+            4  5  6  7
+            8  9 10 11
             12 13 14 15
             16 17 18 19
         >;
