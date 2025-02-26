@@ -10,11 +10,11 @@
             default_layer {
                 label = "Base";
                 bindings = <
-                    &kp KP_NLCK  &kp KP_PSLS  &kp KP_PAST  &kp KP_PMNS
-                    &kp KP_N7    &kp KP_N8    &kp KP_N9    &kp KP_PPLS
+                    &none        &none        &none        &none
+                    &kp KP_N7    &kp KP_N8    &kp KP_N9    &none
                     &kp KP_N4    &kp KP_N5    &kp KP_N6    &none
-                    &kp KP_N1    &kp KP_N2    &kp KP_N3    &kp KP_PENT
-                    &kp KP_N0    &kp KP_PDOT  &kp KP_DEL   &mo 1
+                    &kp KP_N1    &kp KP_N2    &kp KP_N3    &none
+                    &kp KP_N0    &none        &none        &mo 1
                 >;
             };
 
