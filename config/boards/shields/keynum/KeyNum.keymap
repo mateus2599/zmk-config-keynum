@@ -6,6 +6,8 @@
     keymap {
         compatible = "zmk,keymap";
 
+        bindings = <&default_layer &bt>; // Adiciona a referência dos layers!
+
         layers {
             default_layer { 
                 bindings = <
