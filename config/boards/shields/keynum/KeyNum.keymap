@@ -14,18 +14,18 @@
                     &kp KP_N7    &kp KP_N8    &kp KP_N9    &kp KP_PPLS
                     &kp KP_N4    &kp KP_N5    &kp KP_N6    &none
                     &kp KP_N1    &kp KP_N2    &kp KP_N3    &kp KP_PENT
-                    &kp KP_N0    &kp KP_PDOT  &kp KP_DEL   &none
+                    &kp KP_N0    &kp KP_PDOT  &kp KP_DEL   &mo 1
                 >;
             };
 
             bt {
                 label = "Bluetooth";
                 bindings = <
-                    &none         &none            &none        &none
-                    &none         &none            &bootloader  &none
-                    &none         &none            &bt BT_CLR   &none
-                    &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2 &none
-                    &none         &none            &none        &none
+                    &none            &none            &none            &none
+                    &none            &none            &bootloader      &none
+                    &none            &none            &bt BT_CLR       &none
+                    &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &none
+                    &none            &none            &none            &none
                 >;
             };
         };
