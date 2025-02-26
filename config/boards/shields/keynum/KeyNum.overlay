@@ -1,45 +1,20 @@
-#include <dt-bindings/zmk/matrix_transform.h>
-
 / {
     chosen {
-        zmk,kscan = &default_kscan;
-        zmk,matrix_transform = &default_transform;
+        zmk,kscan = &default_kscan; 
     };
 
     default_kscan: kscan {
-        compatible = "zmk,kscan-gpio-matrix"; 
+        compatible = "zmk,kscan-gpio-direct"; 
         diode-direction = <1>;
 
-        row-gpios = <&gpio1 15 GPIO_ACTIVE_HIGH GPIO_PULL_DOWN >,  // num, /, *, -
-                    <&gpio1 13 GPIO_ACTIVE_HIGH GPIO_PULL_DOWN >,  // 7, 8, 9, 0
-                    <&gpio1 11 GPIO_ACTIVE_HIGH GPIO_PULL_DOWN >,  // 4, 5, 6
-                    <&gpio0 10 GPIO_ACTIVE_HIGH GPIO_PULL_DOWN >,   // 1, 2, 3, Enter
-                    <&gpio0 9 GPIO_ACTIVE_HIGH GPIO_PULL_DOWN >;    // +, ., Del 
-
-        col-gpios = <&gpio1 0 GPIO_ACTIVE_HIGH GPIO_PULL_DOWN >, // Coluna 1
-                    <&gpio0 11 GPIO_ACTIVE_HIGH GPIO_PULL_DOWN >,  // Coluna 2
-                    <&gpio1 4 GPIO_ACTIVE_HIGH GPIO_PULL_DOWN >, // Coluna 3
-                    <&gpio1 6 GPIO_ACTIVE_HIGH GPIO_PULL_DOWN >; // Coluna 4 
-    };
-    
-    default_transform: matrix_transform {
-        compatible = "zmk,matrix-transform";
-        columns = <4>;
-        rows = <5>; 
-        matrix = <
-            0  1  2  3   // Primeira linha
-            4  5  6  7
-            8  9 10 11
-            12 13 14 15
-            16 17 18 19
-        >;
-
-        map = <
-        &kp KP_N7       &kp KP_N7      &kp KP_N7        &kp KP_N7
-        &kp KP_N7       &kp KP_N8      &kp KP_N9        &kp KP_N0
-        &kp KP_N4       &kp KP_N5      &kp KP_N6        &none
-        &kp KP_N1       &kp KP_N2      &kp KP_N3        &kp KP_N7
-        &kp KP_N7       &kp KP_N7      &kp KP_N7        &none
-        >;
-    };
+        input-gpios = <&gpio1 15 GPIO_ACTIVE_HIGH GPIO_PULL_DOWN >,  // num, /, *, -
+                    <&gpio1 13 GPIO_ACTIVE_HIGH GPIO_PULL_DOWN >,    // 7, 8, 9, 0
+                    <&gpio1 11 GPIO_ACTIVE_HIGH GPIO_PULL_DOWN >,    // 4, 5, 6
+                    <&gpio0 10 GPIO_ACTIVE_HIGH GPIO_PULL_DOWN >,    // 1, 2, 3, Enter
+                    <&gpio0 9 GPIO_ACTIVE_HIGH GPIO_PULL_DOWN >,     // +, ., Del 
+                    <&gpio1 0 GPIO_ACTIVE_HIGH GPIO_PULL_DOWN >,     // Coluna 1
+                    <&gpio0 11 GPIO_ACTIVE_HIGH GPIO_PULL_DOWN >,    // Coluna 2
+                    <&gpio1 4 GPIO_ACTIVE_HIGH GPIO_PULL_DOWN >,     // Coluna 3
+                    <&gpio1 6 GPIO_ACTIVE_HIGH GPIO_PULL_DOWN >;     // Coluna 4 
+    }; 
 };
