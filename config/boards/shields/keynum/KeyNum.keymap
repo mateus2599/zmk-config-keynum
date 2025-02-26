@@ -8,7 +8,7 @@
 
         layers {
             default_layer {
-                label = "Base";
+                name = "Base";
                 bindings = <
                     &none        &none        &none        &none
                     &kp KP_N7    &kp KP_N8    &kp KP_N9    &none
@@ -19,7 +19,7 @@
             };
 
             bt {
-                label = "Bluetooth";
+                name = "Bluetooth";
                 bindings = <
                      &none         &none            &none          &none
                      &none         &none            &none          &none
